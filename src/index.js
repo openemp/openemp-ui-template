@@ -10,7 +10,7 @@ function domElementGetter() {
   let el = document.getElementById('app');
   if (!el) {
     el = document.createElement('div');
-    el.id = 'app';
+    el.id = 'root';
     el.className = process.env.PROJECT_NAME;
     document.body.appendChild(el);
   }
@@ -28,6 +28,7 @@ const lifecycles = singleSpaReact({
 });
 
 export const { bootstrap, mount, unmount } = lifecycles;
+export { links } from './root.helper';
 
 export const devtools = {
   overlays: {
