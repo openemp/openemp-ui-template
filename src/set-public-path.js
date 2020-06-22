@@ -1,3 +1,3 @@
 import { setPublicPath } from 'systemjs-webpack-interop';
 
-setPublicPath('@openemp-mf/template');
+setPublicPath(`@${process.env.ORG_NAME}/${process.env.PROJECT_NAME}`);

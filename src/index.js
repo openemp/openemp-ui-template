@@ -28,6 +28,7 @@ const lifecycles = singleSpaReact({
 });
 
 export const { bootstrap, mount, unmount } = lifecycles;
+export { links } from './root.helper';
 
 export const devtools = {
   overlays: {
