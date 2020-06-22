@@ -10,7 +10,7 @@ function domElementGetter() {
   let el = document.getElementById('app');
   if (!el) {
     el = document.createElement('div');
-    el.id = 'root';
+    el.id = 'app';
     el.className = process.env.PROJECT_NAME;
     document.body.appendChild(el);
   }

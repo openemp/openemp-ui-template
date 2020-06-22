@@ -9,9 +9,6 @@ require('dotenv').config();
 
 const { env } = process;
 
-console.log('-----------', new DotenvWebpackPlugin());
-console.log('-----------', new DefinePlugin({ 'process.env.ORG_NAME': '"openemp-mf"' }));
-
 module.exports = (webpackConfigEnv = {}) => {
   const opts = {
     orgName: env.ORG_NAME,
@@ -86,7 +83,7 @@ module.exports = (webpackConfigEnv = {}) => {
         assets: path.resolve(__dirname, 'src/assets'),
         components: path.resolve(__dirname, 'src/components'),
         features: path.resolve(__dirname, 'src/features'),
-        helpers: path.resolve(__dirname, 'src/features'),
+        helpers: path.resolve(__dirname, 'src/helpers'),
         reducer: path.resolve(__dirname, 'src/reducer'),
       },
     },
