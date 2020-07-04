@@ -1,6 +1,7 @@
 import React from 'react';
-import { Router, ha } from '@reach/router';
+import { Router } from '@reach/router';
 import { DisplayGreeting } from 'features';
+import { withAuth } from '@openemp-mf/login';
 
 const Root = () => {
   return (
@@ -12,4 +13,4 @@ const Root = () => {
   );
 };
 
-export default Root;
+export default withAuth(Root);

@@ -27,7 +27,24 @@ const lifecycles = singleSpaReact({
   domElementGetter,
 });
 
-export const { bootstrap, mount, unmount } = lifecycles;
+export function bootstrap(props) {
+  return Promise.resolve().then(() => {
+    return lifecycles.bootstrap(props);
+  });
+}
+
+export function mount(props) {
+  return window.appMount.then(() => {
+    return lifecycles.mount(props);
+  });
+}
+
+export function unmount(props) {
+  return Promise.resolve().then(() => {
+    return lifecycles.unmount(props);
+  });
+}
+
 export { links } from './root.helper';
 
 export const devtools = {
